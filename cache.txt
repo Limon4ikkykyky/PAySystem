@@ -1,0 +1,41 @@
+//работа с Express 
+//подключение експрес
+const express = require("express");
+//парсер наших html страниц для работы с формами
+const bodyParser = require("body-parser");
+ 
+//создание экземпляра приложения
+const app = express();
+
+
+// создаем парсер для данных application/x-www-form-urlencoded
+const urlencodedParser = bodyParser.urlencoded({extended: false});
+
+//открытие формы регистрации
+app.get("/register", urlencodedParser, function (request, response) {
+    //middleware
+    response.sendFile(__dirname + "/PaymentSystem.View/registration.html");
+});
+//отправка данныых по нажатию
+app.post("/register", urlencodedParser, function (request, response) {
+    if(!request.body) return response.sendStatus(400);
+    console.log(request.body);
+    response.send(`${request.body.name} - ${request.body.email}`);
+});
+
+
+
+
+ 
+//middleware MMM
+app.get("/MMM(.html)?", function (request, response) {
+    response.send("<h1>ммммм</h1>")
+});
+
+//middleware главного меню
+app.use("/", function(request, response){
+     
+    response.send("<h1>Главная страница</h1>");
+});
+ 
+app.listen(3000);

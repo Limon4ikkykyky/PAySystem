@@ -1,0 +1,51 @@
+{
+    "name": "paymentsystem",
+    "version": "1.0.0",
+    "description": "project created for making payments",
+    "main": "main.js",
+    "type": "module",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "colors": "^1.4.0",
+        "express": "^4.17.1",
+        "hbs": "^4.1.1",
+        "mongoose": "^5.12.3"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.11",
+        "nodemon": "^2.0.7"
+    },
+    "scripts": {
+        "serve": "nodemon main.js",
+        "start": "node main.js",
+        "test": "test"
+    },
+    "keywords": [
+        "MVC",
+        "async",
+        "PaymentSystem"
+    ],
+    "license": "ISC",
+    "contributors": [
+        {
+            "name": "Mykyta Olkhovskyi",
+            "email": "neketfox@gmail.com",
+            "url": "https://github.com/neketfox"
+        },
+        {
+            "name": "Maxim Mykytenko",
+            "email": "febriary1234@gmail.com",
+            "url": "https://github.com/Limon4ikkykyky"
+        },
+        {
+            "name": "Danylo Kolesnykov",
+            "email": "dkolesnikov944@gmail.com",
+            "url": "https://github.com/iiiakaji"
+        }
+    ],
+    "bugs": {
+        "url": "https://github.com/Limon4ikkykyky/Zalupa",
+        "email": "neketfox@gmail.com"
+    },
+    "homepage": "https://github.com/Limon4ikkykyky/Zalupa"
+}

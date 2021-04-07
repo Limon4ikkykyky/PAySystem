@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Order</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="registration-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row order">
+            <div class="col-12">
+                <h2>Регестрация</h2>
+            </div>
+            <div class="col-6">
+                <div class="first_form">
+                    <div class="num_text">
+                        <h4>Ваши данные</h4>
+                    </div>
+                </div>
+                <form action="/register" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="Name" placeholder="Имя и фамилия">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" class="form-control" id="Email" placeholder="Email">
+                    </div>              
+                    <div class="form-group">
+                        <input type="text" name="tel" class="form-control" id="Phone" placeholder="Телефон">
+                    </div>   
+                    <div class="button_box">
+                            <input type="submit" class="btn btn-success" id="send" value="Зарегестрироваться">
+                    </div>       
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
