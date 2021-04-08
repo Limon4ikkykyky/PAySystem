@@ -92,3 +92,6 @@ body{
 
 
    @media (min-width: 768px) {.dropdown:hover .dropdown-menu{margin-top:0;display:block}}
+   nav.navbar .dropdown:hover > .dropdown-menu {
+    display: block; 
+   } 
