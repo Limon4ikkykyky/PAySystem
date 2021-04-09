@@ -7,6 +7,20 @@
     <title>test static page</title>
 </head>
 <body>
-    
+
+    <div id="app">
+        <div v-if="users.length ===0">
+            <h2>Loading...</h2>
+        </div>
+        <ul class="list-group" v-else> 
+            <li class="list-group-item" v-for="user in users">
+                {{user.name}}
+            </li>
+        </ul>
+    </div>
+
+    <h1>Vue js hello</h1>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./app.js"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@ import express from 'express'
 import path from 'path'
 import hbs from 'hbs'
 import {requestTime, logger} from './MiddleWares/firstTestMiddleWares.js'
+import testRoute from './PaymentSystem.Routes/testRoute.js'
 
 
 //из-за специфики import мы не можем напрямую использывать __dirname
@@ -26,6 +27,10 @@ app.use(express.static(path.resolve(__dirname, "PaymentSystem.View/StaticPages")
 //наши кастомные middlewares, один который дополняет запрос его временем при попадание в обработчик, второй выводить это в консоль 
 app.use(requestTime);
 app.use(logger);
+//установка нашего роута в программу
+app.use(testRoute);
+
+
 
 //обработчик запроса по адресу "/", который с помощью Handlebars обращатся к нужной директории и подтягиевает документ по названию
 //С помощью движка представлений мы можем передавать динамические переменнеые
@@ -42,6 +47,8 @@ app.get("/",(request, response)=>{
 app.get("/download", (request, response) => {
     response.download(path.resolve(__dirname, "PaymentSystem.View/StaticPages","testStaticPage.html"));
 });
+
+
 
 
 //Запуск сервера на порту PORT
