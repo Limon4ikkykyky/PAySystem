@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="RegStyle.css">
+    <link rel="stylesheet" href="VostPArolya.css">
 </head>
   <body>
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -44,43 +44,22 @@
             <li class="nav-item navbar-right active ">
               <a class="nav-link" href="Vhod.html">Мой кабинет</a>
             </li> 
-            
-                
-             
-       
+            </ul>
+           </div>
+            </ul>
+           </div>
+         </div>
       </div>
     </header>
-    <div class="container-fluid">
-        <div class="row order">
-            <div class="col-12">
-                <h2>Регестрация</h2>
-            </div>
-            <div class="col-6">
-                <div class="first_form">
-                    <div class="num_text">
-                        <h4>Ваши данные</h4>
-                         </div>
-                    </div>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="Name" placeholder="Имя и фамилия">
-                          </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="Email" placeholder="Email">
-                          </div>              
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="Phone" placeholder="Телефон">
-                          </div>        
-                        </form>
-                        <div class="button_box">
-                            <input tyoe="submit" class="btn btn-success" id="send" value="Зарегестрироваться">
     
-                        </div>  
-                        
-            </div>
-        </div>
-    </div>
-  </body>
-</html>
-                                
-                                  
+            <form action="action_page.php">
+                <h1>Восстановление пароля по номеру телефона</h1>
+                <div class="container">
+                  
+                  <p>Заполните поле чтоб восстановить пароль</p>
+                  <label for="psw"><b>Номер Телефона</b></label>
+                  <input type="text" placeholder="Введите номер телефона" name="psw" required>
+                  <button type="submit" class="registerbtn">Восcтановить</button>
+                </div>
+              
+            </form>
