@@ -1,12 +1,14 @@
-import colors from 'colors'
+const colors = require('colors');
 
 //midlleware вызываются последовательно, то есть в конце каждого нужно прописать функцию next 
-export function requestTime(request, response, next) {
+function requestTime(request, response, next) {
     request.requestTime = Date.now();
     next();
 }
 
-export function logger(request, response, next) {
+function logger(request, response, next) {
     console.log(colors.black(`Req. time: ${request.requestTime}`));
     next();
 }
+
+exports = module.exports = {requestTime, logger};

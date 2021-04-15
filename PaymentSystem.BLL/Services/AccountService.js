@@ -1,5 +1,5 @@
-const UserRepository = require("../../PaymentSystem.DAL/Repositories/UserRepository");
 const User = require("../../PaymentSystem.Model/Models/User");
+
 
 class AccountService
 {

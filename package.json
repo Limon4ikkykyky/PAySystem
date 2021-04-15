@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "project created for making payments",
     "main": "main.js",
-    "type": "module",
     "dependencies": {
         "body-parser": "^1.19.0",
         "colors": "^1.4.0",

@@ -1,12 +1,27 @@
-//подключение репозитория и сервиса
-const AccountService = require("./PaymentSystem.BLL/Services/AccountService");
-const UserRepository = require("./PaymentSystem.DAL/Repositories/UserRepository");
 
+//тестирование DI
 
-acc = new AccountService(new UserRepository([]));
+class bred
+{
+    constructor(c){
+        this.c = c;
+    }
 
-//Регистрация 
-acc.Registration("gggg","ffff","cccc","tttt");
+    getHello(){
+        //return this.c.Hello();
+        return this.c.toString();
+    }
+}
 
-//Вывод результата
-console.log(acc.GetAllUsers());
+class HE
+{
+    Hello(){
+        return "hello";
+    }
+}
+
+var t = new HE();
+
+console.log(t.toString());
+
+exports = module.exports = {bred, HE}

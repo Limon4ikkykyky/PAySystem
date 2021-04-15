@@ -1,24 +1,27 @@
+//import Context from "../TestContext/Context.js";
 const Context = require("../TestContext/Context");
+const User = require("../../PaymentSystem.Model/Models/User");
 
 class UserRepository
 {
     //в конструктор нужно передать BDcontext
-    /*constructor(context)
+    constructor(context)
     {
         this.context = context;
-    }*/
-
-    context = Context.getInstance();
+    }
 
     async Auntification()
     {
    
     }
 
-    GetAllUsers(request, response)
+    GetAllUsers()
     {
+        //for testing (Mock data)
         return this.context.listOfUser;
-        //return this.list;
+
+        //for mongoDB
+        //return User.find().select();
     }
     
     //Get user by id
