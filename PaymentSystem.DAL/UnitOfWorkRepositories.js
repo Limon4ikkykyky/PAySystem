@@ -17,8 +17,28 @@ class UnitOfWorkRepositories
     GetGenericRepository(type) {
         key = typeof(type).Name;
         if (this._genericRepositories === null) this._genericRepositories = new Map();
-        if (!this._genericRepositories.has(key)) this._genericRepositories.set(key, new GenericRepository(this._context, key));
+        if (!this._genericRepositories.has(key)) this._genericRepositories.set(key, CorrectTypeOfRepository(type));
         return this._genericRepositories.get(key);
+    }
+
+    CorrectTypeOfRepository(type)
+    {
+        //if() проверка на корректный ввод
+
+        var correctCollection = {};
+        switch(type)
+        {
+            case "Bank":
+                correctCollection = this._context.BankPay;        
+                break;
+
+            default:
+                //correctCollection = context.default;
+                //throw Exp();
+                break;    
+            //здесь можно добавлять кейсы типов моделей   
+        }
+        return new GenericRepository(correctCollection);
     }
 
     SaveChanges()

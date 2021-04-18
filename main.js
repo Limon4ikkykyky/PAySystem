@@ -4,11 +4,11 @@ import hbs from 'hbs'
 import {requestTime, logger} from './MiddleWares/firstTestMiddleWares.js'
 import testRoute from './PaymentSystem.Routes/testRoute.js'*/
 
-const express = require('express'),
-      path = require('path'),
-      hbs = require('hbs'),
-      {requestTime, logger} = require('./MiddleWares/firstTestMiddleWares'),
-      testRoute = require('./PaymentSystem.Routes/testRoute');
+const express = require("express"),
+      path = require("path"),
+      hbs = require("hbs"),
+      {requestTime, logger} = require("./MiddleWares/firstTestMiddleWares"),
+      testRoute = require("./PaymentSystem.Routes/testRoute");
 
 
 //из-за специфики import мы не можем напрямую использывать  __directname

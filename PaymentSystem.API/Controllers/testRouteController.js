@@ -1,9 +1,3 @@
-//import AccountService from '../../PaymentSystem.BLL/Services/AccountService.js'
-//import UserRepository from '../../PaymentSystem.DAL/Repositories/UserRepository.js'
-
-//const AccountService = require("../../PaymentSystem.BLL/Services/AccountService");
-//const UserRepository = require("../../PaymentSystem.DAL/Repositories/UserRepository");
-
 class TestControlller
 {
     constructor(accountService)
@@ -25,13 +19,18 @@ class TestControlller
         //accService.GetAllUsers().
         //then(user => response.status(200).json(user));
 
-        console.log(this.accountService.toString());
-
         //for testing
-        response.status(200).json(this.accountService.toString());
+        response.status(200).json(this.accountService.GetAllUsers());
     }
 
 
+    async testPrintText(){
+        return await this.accountService.GetAllUsers();
+    }
+
+    async testCreate(){
+       await this.accountService.Registration("max","ivanov","baks","mypassword");
+    }
 }
 
 exports = module.exports = TestControlller;

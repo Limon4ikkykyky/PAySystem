@@ -1,13 +1,9 @@
-//import Context from "../TestContext/Context.js";
-const Context = require("../TestContext/Context");
-const User = require("../../PaymentSystem.Model/Models/User");
-
 class UserRepository
 {
     //в конструктор нужно передать BDcontext
-    constructor(context)
+    constructor(unitContext)
     {
-        this.context = context;
+        this.userCollection = unitContext.User;
     }
 
     async Auntification()
@@ -15,13 +11,9 @@ class UserRepository
    
     }
 
-    GetAllUsers()
+    async GetAllUsers()
     {
-        //for testing (Mock data)
-        return this.context.listOfUser;
-
-        //for mongoDB
-        //return User.find().select();
+        return this.userCollection.find({});
     }
     
     //Get user by id
@@ -31,10 +23,17 @@ class UserRepository
     }
     
     // validate
-    CreateUser(userParam)
+    async CreateUser(userParam)
     {
-        this.context.listOfUser.push(userParam);
-       //this.list.push(userParam);
+        
+        const document = new this.userCollection(userParam);
+
+        return document.save((err)=>
+        {
+            if(err) return console.log(err);
+     
+            console.log("Сохранен объект user", document);
+        });
     }
     
     //update

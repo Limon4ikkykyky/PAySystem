@@ -1,7 +1,6 @@
 const { Router } = require('express');
 //const TestControlller = require('../PaymentSystem.API/Controllers/testRouteController');
 const { testContr } = require('../PaymentSystem.IoC/DIRegister');
-const { HelloTest } = require('../PaymentSystem.IoC/DIRegister');
 
 const router = Router();
 

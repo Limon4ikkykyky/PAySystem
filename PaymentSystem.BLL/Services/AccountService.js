@@ -1,31 +1,26 @@
-const User = require("../../PaymentSystem.Model/Models/User");
-
+const UserEntity = require("../../PaymentSystem.Entity/Entities/UserEntity");
+//const User = require("../../PaymentSystem.Model/Models/User");
 
 class AccountService
 {
-    constructor(userRepository)
+    constructor(unitOfWork)
     {
-        this.userRepository = userRepository;
+        this.userRepository = unitOfWork.UserRepository;
     }
     
-    Registration(name, surName, login, password)
+    async Registration(name, surName, login, password)
     {
         if (name == null || surName == null || login == null || password == null)
         {
           //  throw new ArgumentNullException("Some of the fields are equal to zero");
         }
 
-        this.userRepository.CreateUser(new User({
-            id: 9, 
-            name: name,   
-            surName: surName,
-            password: password
-        }));
+        await this.userRepository.CreateUser(new UserEntity(name ,surName, login, password));
     }
 
-    GetAllUsers()
+    async GetAllUsers()
     {
-        return this.userRepository.GetAllUsers();
+        return await this.userRepository.GetAllUsers();
     }
 }
 

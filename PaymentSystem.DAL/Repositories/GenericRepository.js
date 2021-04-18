@@ -1,54 +1,38 @@
 class GenericRepository
 {
-    constructor(context,type)
+    constructor(collection)
     {
-        //скорее всего логику определения типа нужно перенести из конструктора 
-        // в статический метод определения
-        switch(type)
-        {
-            case "User":
-                this.contextList = context.users;
-                break;
-
-            case "Bank":
-                this.contextList = context.banks;
-                break;
-
-            default:
-                this.contextList = context.default;
-                break;    
-            //здесь можно добавлять кейсы типов моделей   
-        }
+        this.collection = collection;
     }
 
 
     Create(item) {
        //обращение в бд к нужной таблице исходя из типа item
        //так как это дженерик репозиторий
-       this.context.users.push(item);
+       this.collection.users.push(item);
     }
 
     FindById(id) {
-       return this.context.users[id];
+       return this.collection.users[id];
     }
 
     Get() {
-        return this.context.users;
+        return this.collection.users;
     }
 
     Get(condition) {
        //condition это лямда функция условия выборки
-       return this.context.users.filter(condition);
+       return this.collection.users.filter(condition);
     }
 
     Remove(item) {
-        this.context.users.
-        splice(context.users.IndexOf(item), 1);
+        this.collection.users.
+        splice(collection.users.IndexOf(item), 1);
     }
 
     Update(item) {
-        this.context.users.
-        splice(context.users.IndexOf(item), 1, item);
+        this.collection.users.
+        splice(collection.users.IndexOf(item), 1, item);
     }
 }
 

@@ -1,24 +1,21 @@
 //подключение классов и слоев
-const UserRepository = require("../PaymentSystem.DAL/Repositories/UserRepository");
-const Context = require("../PaymentSystem.DAL/TestContext/Context");
+const Context = require("../PaymentSystem.DAL/DBContent/Context/Context");
 const UnitOfWorkRepositories = require("../PaymentSystem.DAL/UnitOfWorkRepositories");
 const DIC = require("./DIContainer");
 const AccountService = require("../PaymentSystem.BLL/Services/AccountService");
 const TestControlller = require("../PaymentSystem.API/Controllers/testRouteController");
+const models = require("../PaymentSystem.DAL/DBContent/Context/Context");
 
 
 //создание экземпляра контейнера
 const dic = new DIC();
 
 //регистрациия зависимостей 
-dic.register("context", Context);
-dic.register("userRepository", UserRepository);
-dic.register("unitOfWork", UnitOfWorkRepositories);
-dic.register("accountService", AccountService);
+dic.register("context", models);//регистрация списка моделей в конструктор репозиториев
 
-
-//для получения обьекта с контейнера по ключи для дальнейшего его использования
-dic.factory("account", AccountService);
+//Регистрации классов для получения обьекта с контейнера по ключи для дальнейшего его использования
+dic.factory("unitOfWork", UnitOfWorkRepositories);
+dic.factory("accountService", AccountService);
 dic.factory("testController", TestControlller);
 
 
